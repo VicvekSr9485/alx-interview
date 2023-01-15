@@ -9,7 +9,7 @@ def minOperations(n: int) -> int:
     counter = 0
 
     if n <= 1:
-        return 0
+        return counter
 
     for i in range(2, n + 1):
         while (0 == n % i):
