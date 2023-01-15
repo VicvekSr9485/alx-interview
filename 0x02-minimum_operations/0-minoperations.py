@@ -3,15 +3,18 @@
 """
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """ Returns the minimum number of operations
     """
-    if n == 0:
+    counter = 0
+
+    if n <= 1:
         return 0
-    dp = [0] * (n + 1)
+
     for i in range(2, n + 1):
-        dp[i] = i
-        for j in range(2, i):
-            if (i % j == 0):
-                dp[i] = min(dp[i], dp[j] + 1 + i // j)
-    return dp[n]
+        while (0 == n % i):
+            counter = counter + i
+            n = n / i
+            if n < i:
+                break
+    return counter
