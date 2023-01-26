@@ -3,7 +3,9 @@
 
 
 def validUTF8(data):
-    # Initialize a counter to keep track of the number of bytes in a multi-byte character
+    """ valid UTF-8 """
+    #Initialize a counter to keep track of the number
+    # of bytes in a multi-byte character
     bytes_in_char = 0
 
     for byte in data:
