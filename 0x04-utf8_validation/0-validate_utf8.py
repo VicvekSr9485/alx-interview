@@ -4,7 +4,7 @@
 
 def validUTF8(data):
     """ valid UTF-8 """
-    #Initialize a counter to keep track of the number
+    # Initialize a counter to keep track of the number
     # of bytes in a multi-byte character
     bytes_in_char = 0
 
