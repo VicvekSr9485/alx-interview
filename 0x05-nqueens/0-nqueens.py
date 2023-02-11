@@ -2,8 +2,8 @@
 """ Solve N Queens problem """
 
 import sys
- 
-    
+
+
 if len(sys.argv) < 2:
     print("Usage: nqueens N")
     sys.exit(1)
@@ -16,24 +16,25 @@ if n:
         print("N must be at least 4")
         sys.exit(1)
 
+
 def n_queens(num):
     """ prints every possible solution """
     result = []
 
-    col = set() # tracking the columns
-    neg_diagonal = set() # (r - 1) tracking the negative diagonals
-    pos_diagonal = set() # (r + 1)tracking the positive diagonals
+    col = set()     # tracking the columns
+    neg_diagonal = set()    # (r - 1) tracking the negative diagonals
+    pos_diagonal = set()    # (r + 1)tracking the positive diagonals
 
-    board = [[] for num in range(num)] # empty board
+    board = [[] for num in range(num)]  # empty board
 
     def backtracking(r):
         """recursive function for backtracking """
-        if r == num: # getting to the last row
-            copy = board.copy() # copy the current board
+        if r == num:    # getting to the last row
+            copy = board.copy()     # copy the current board
             result.append(copy)
             return
 
-        for c in range(num): # validating used columns and diagonals
+        for c in range(num):    # validating used columns and diagonals
             if c in col or (r - c) in neg_diagonal or (r + c) in pos_diagonal:
                 continue
 
@@ -55,6 +56,7 @@ def n_queens(num):
 
     backtracking(0)
     return result
+
 
 if __name__ == '__main__':
     boards = n_queens(n)
