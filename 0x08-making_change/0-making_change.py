@@ -21,4 +21,6 @@ def makeChange(coins, total):
         for coin in coins:
             if amount - coin >= 0:
                 dp[amount] = min(dp[amount], 1 + dp[amount - coin])
-    return dp[total] if dp[total] != total + 1 else -1
+    if dp[total] < total + 1:
+        return dp[total]
+    return -1
