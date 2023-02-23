@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Solution to Make Change Interview Problem """
+""" Solution to 'Make Change' Interview Problem """
 
 
 def makeChange(coins, total):
@@ -21,6 +21,6 @@ def makeChange(coins, total):
         for coin in coins:
             if amount - coin >= 0:
                 dp[amount] = min(dp[amount], dp[amount - coin] + 1)
-    if dp[total] != total + 1:
+    if dp[total] < total + 1:
         return dp[total]
     return -1
