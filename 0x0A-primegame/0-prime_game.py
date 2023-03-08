@@ -60,7 +60,7 @@ def isWinner(x, nums):
             break
         # remove prime number
         remove_prime(n, prime)
-        remove_multiples(n, number, player)
+        remove_multiples(n, prime, player)
 
         if player == "ben":
             player = "maria"
